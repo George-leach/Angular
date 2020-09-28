@@ -7,7 +7,11 @@ import { AppComponent } from './app.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { HomeComponent } from './home/home.component';
-
+import { CvComponent } from './Routing/cv/cv.component';
+import { SectionOrdersComponent } from './Routing/section-orders/section-orders.component';
+import { SectionSalesComponent } from './Routing/section-sales/section-sales.component';
+import { SectionhealthComponent } from './Routing/sectionhealth/sectionhealth.component'
+import {appRoutes} from '../routes';
 
 
 @NgModule({
@@ -16,14 +20,16 @@ import { HomeComponent } from './home/home.component';
     NavMenuComponent,
     HomeComponent,
     SidebarComponent,
+    CvComponent,
+    SectionOrdersComponent,
+    SectionSalesComponent,
+    SectionhealthComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
     HttpClientModule,
     FormsModule,
-    RouterModule.forRoot([
-      { path: '', component: HomeComponent, pathMatch: 'full' },
-    ])
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [],
   bootstrap: [AppComponent]
